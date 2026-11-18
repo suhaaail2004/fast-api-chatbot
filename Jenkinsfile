@@ -59,7 +59,7 @@ pipeline {
                             git remote set-url origin https://\${GH_USER}:\${GH_TOKEN}@github.com/suhaaail2004/fast-api-chatbot.git
                             git pull --rebase origin ${MANIFEST_BRANCH}
                             
-                            sed -i '/name: fast-api-chatbot/{n;s|image:.*|image: ${DOCKER_IMAGE}:${env.BUILD_NUMBER}|}' k8s/Deployment.yaml
+                            sed -i '/name: fast-api-chatbot/{n;s|image:.*|image: ${DOCKER_IMAGE}:${env.BUILD_NUMBER}|}' k8s/deployment.yaml
                             
                             git config user.name "suhaaail2004"
                             git config user.email "suhailshihab444@gmail.com"
